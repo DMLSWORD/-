@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="一个简单、快速的图片压缩工具，支持 PNG、JPG 格式，最大 20MB。">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>图片压缩工具</h1>
+            <p class="subtitle">简单、快速的图片压缩体验 By-DML</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 上传区域 -->
+        <section class="upload-section">
+            <div class="section-header">
+                <h2>选择图片</h2>
+                <p>支持 PNG、JPG 格式，最大 20MB</p>
+            </div>
+            
+            <div class="upload-area" id="dropZone">
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    <p class="upload-text" id="uploadText">拖放图片到此处，或点击上传</p>
+                </div>
+            </div>
+            
+            <!-- 压缩设置 -->
+            <div class="compression-settings">
+                <div class="settings-header">
+                    <h3>压缩质量</h3>
+                    <span id="qualityValue" class="quality-value">80%</span>
+                </div>
+                <div class="slider-container">
+                    <input type="range" id="quality" min="0" max="100" value="80" class="quality-slider">
+                    <div class="slider-labels">
+                        <span>压缩</span>
+                        <span>平衡</span>
+                        <span>高质量</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片预览区域 -->
+        <section class="preview-section">
+            <div class="section-header">
+                <h2>预览</h2>
+                <p>压缩前后对比</p>
+            </div>
+            <div class="preview-container">
+                <!-- 预览内容将通过JavaScript动态生成 -->
+            </div>
+        </section>
+
+        <!-- 批量下载按钮 -->
+        <button id="downloadAll" class="download-button" disabled>
+            <svg class="download-icon" viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            下载所有压缩图片
+        </button>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.0/dist/browser-image-compression.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

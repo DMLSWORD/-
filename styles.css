@@ -1,0 +1,392 @@
+:root {
+    --primary-color: #0071e3;
+    --primary-hover: #0077ED;
+    --background-color: #fbfbfd;
+    --card-background: rgba(255, 255, 255, 0.8);
+    --text-color: #1d1d1f;
+    --secondary-text: #86868b;
+    --border-radius: 12px;
+    --border-color: #d2d2d7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 顶部导航样式 */
+.header {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    color: var(--secondary-text);
+    font-size: 1rem;
+}
+
+/* 主容器样式 */
+.container {
+    max-width: 980px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+/* 区块通用样式 */
+.section-header {
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.section-header p {
+    color: var(--secondary-text);
+}
+
+/* 上传区域样式 */
+.upload-section {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+}
+
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background: rgba(0,113,227,0.05);
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    fill: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-text {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+}
+
+/* 滑块样式 */
+.compression-settings {
+    padding: 0.5rem 0;
+    margin-top: -0.5rem;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.settings-header h3 {
+    font-size: 1rem;
+}
+
+.quality-value {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* 滑块容器样式 */
+.slider-container {
+    position: relative;
+    padding: 0.5rem 0;
+    width: 100%;
+    height: 6px;
+}
+
+/* 滑块样式 */
+.quality-slider {
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    z-index: 2;
+}
+
+/* 滑块轨道样式 */
+.quality-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.quality-slider::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* 滑块背景轨道 */
+.slider-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 6px;
+    background: #e8e8e8;
+    border-radius: 3px;
+    z-index: 0;
+}
+
+/* 滑块进度条样式 */
+.slider-progress {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 6px;
+    background: linear-gradient(to right, var(--primary-color), #2196f3);
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 滑块标签样式 */
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+    color: var(--secondary-text);
+    font-size: 0.8rem;
+    padding: 0 2px;
+}
+
+/* 预览区域样式 */
+.preview-section {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* 图片卡片样式 */
+.image-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+
+.image-card:hover {
+    transform: translateY(-2px);
+}
+
+.image-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.image-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.image-preview {
+    text-align: center;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: calc(var(--border-radius) - 4px);
+    border: 1px solid var(--border-color);
+}
+
+.image-info {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+/* 下载按钮样式 */
+.download-button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.download-button:not(:disabled):hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.download-button:disabled {
+    background: var(--border-color);
+    cursor: not-allowed;
+}
+
+.download-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        margin: 1rem auto;
+    }
+    
+    .upload-section,
+    .preview-section {
+        padding: 1.5rem;
+    }
+    
+    .image-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.image-card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* 拖放状态样式 */
+.upload-area.drag-over {
+    border-color: var(--primary-color);
+    background: rgba(0,113,227,0.05);
+}
+
+/* 上传区域鼠标样式 */
+.upload-area {
+    cursor: pointer;
+}
+
+.upload-text {
+    cursor: pointer;
+}
+
+/* 修改滑块手柄样式 */
+.quality-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    z-index: 3;
+}
+
+.quality-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    z-index: 3;
+}
+
+/* 滑块手柄悬停效果 */
+.quality-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.quality-slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+} 
