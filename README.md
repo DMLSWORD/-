@@ -21,7 +21,7 @@
 
 ## 🆕 更新日志
 
-### v1.0.0 (2024-03-xx)
+### v1.0.0 (2025-02-25)
 
 - 🎉 首次发布
 - ✨ 基础压缩功能
@@ -44,15 +44,10 @@
 
 ## 👨‍💻 作者
 
-你的名字 - [GitHub](https://github.com/你的用户名)
+DML - [GitHub](https://github.com/DMLSWORD)
 
 ## 🙏 致谢
 
 - [browser-image-compression](https://www.npmjs.com/package/browser-image-compression) - 提供高效的图片压缩功能
 - Apple Design - 界面设计灵感来源
-
-## 📞 联系方式
-
-如有问题或建议，欢迎通过以下方式联系：
-
-- 提交 [Issue](https://github.com/你的用户名/image-compressor/issues)
+- ai呀蔡蔡
